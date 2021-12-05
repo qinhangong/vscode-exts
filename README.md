@@ -1,4 +1,7 @@
 ##vscode自研插件
 
-- demo.log
+- magic-log
 
+- magic-api
+
+- magic-data

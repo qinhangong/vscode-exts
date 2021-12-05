@@ -10,20 +10,68 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:demo.log"
+		"onCommand:magic-data",
+		"onCommand:magic-api",
+		"onCommand:magic-log"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "demo.log",
-				"title": "demo.log"
+				"command": "magic-data",
+				"title": "magic-data"
+			},
+			{
+				"command": "magic-api",
+				"title": "magic-api"
+			},
+			{
+				"command": "magic-log",
+				"title": "magic-log"
 			}
 		],
-		"keybindings":{
-			"command": "demo.log",
-			"key": "alt+shift+c"
-		}
+		"keybindings": [
+			{
+				"command": "magic-data",
+				"key": "alt+shift+d"
+			},
+			{
+				"command": "magic-api",
+				"key": "alt+shift+a"
+			},
+			{
+				"command": "magic-log",
+				"key": "alt+shift+c"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"group": "navigation",
+					"submenu": "magic.coding"
+				}
+			],
+			"magic.coding": [
+				{
+					"command": "magic-data",
+					"group": "navigation@1"
+				},
+				{
+					"command": "magic-api",
+					"group": "navigation@2"
+				},
+				{
+					"command": "magic-log",
+					"group": "navigation@3"
+				}
+			]
+		},
+		"submenus": [
+			{
+				"id": "magic.coding",
+				"label": "magic.coding"
+			}
+		]
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run package",
@@ -51,5 +99,8 @@
 		"webpack": "^5.52.1",
 		"webpack-cli": "^4.8.0",
 		"@vscode/test-electron": "^1.6.2"
+	},
+	"dependencies": {
+		"axios": "^0.24.0"
 	}
 }
