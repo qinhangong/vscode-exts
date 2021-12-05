@@ -30,7 +30,7 @@ const dataExt = vscode.commands.registerCommand('magic-api', () => {
           return item.slice(0, 1).toUpperCase() + item.slice(1);
         })
         .join('');
-      const newStart = new vscode.Position(start.line + 5, 0); // 注释下面算真正的开始
+      const newStart = new vscode.Position(start.line + 4, 0); // 注释下面算真正的开始
 
       insertFunction = `export const ${funcName} = data => {
           return request.${method}({ url: '${url}', data });
