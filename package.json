@@ -12,7 +12,8 @@
 	"activationEvents": [
 		"onCommand:magic-data",
 		"onCommand:magic-api",
-		"onCommand:magic-log"
+		"onCommand:magic-log",
+		"onCommand:magic-columns"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
@@ -28,7 +29,11 @@
 			{
 				"command": "magic-log",
 				"title": "magic-log"
-			}
+			},
+			{
+        "command": "magic-columns",
+        "title": "magic-columns"
+      }
 		],
 		"keybindings": [
 			{
@@ -42,7 +47,13 @@
 			{
 				"command": "magic-log",
 				"key": "alt+shift+c"
-			}
+			},
+			{
+        "command": "magic-columns",
+        "key": "ctrl+alt+m",
+        "mac": "ctrl+alt+m",
+        "when": "editorTextFocus"
+      }
 		],
 		"menus": {
 			"editor/context": [
@@ -63,7 +74,11 @@
 				{
 					"command": "magic-log",
 					"group": "navigation@3"
-				}
+				},
+				{
+          "command": "magic-columns",
+          "group": "navigation@4"
+        }
 			]
 		},
 		"submenus": [

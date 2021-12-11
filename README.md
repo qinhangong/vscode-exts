@@ -5,3 +5,5 @@
 - magic-api
 
 - magic-data
+
+- magic-columns
